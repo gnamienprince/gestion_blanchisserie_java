@@ -1,0 +1,51 @@
+
+.txtBlanchisserie{
+	-fx-font-size : 40px;
+	-fx-font-weight : bold;
+	-fx-font-family : "Lily Script One";
+	-fx-text-align : center;
+}
+
+.cadreForm{
+	-fx-background-color : #83ACE7;
+	-fx-background-radius : 30px;
+	-fx-alignment : center;
+}
+
+.form{
+	
+	-fx-background-color : #ffffff;
+	-fx-background-radius : 10px;
+	-fx-padding : 0px 0px 0px 10px;
+	
+}
+
+.form2{
+	
+	-fx-background-radius : 10px;
+	-fx-padding : 0px 0px 0px 10px;
+	-fx-border-color : #83ACE7;
+	
+}
+
+.textbleu{
+	-fx-text-fill : #83ACE7;
+}
+
+.checkbox{
+	-fx-opacity : 1;
+}
+
+.buttonBleu{
+	-fx-background-color : #83ACE7;
+	
+	
+}
+.titleTextfield{
+	-fx-font-size : 10px;
+}
+
+.buttonBlanc{
+	-fx-text-fill : #83ACE7;
+	-fx-background-color : #FFFFFF;
+}
