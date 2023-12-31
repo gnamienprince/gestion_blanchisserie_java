@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blanchisserie.blanchisseriemoderne.GestionCommandeController">
+   <children>
+      <SplitPane prefHeight="700.0" prefWidth="301.0">
+         <items>
+            <AnchorPane prefHeight="700.0" prefWidth="301.0" style="-fx-background-color: #83ACE7;">
+               <children>
+                  <Label fx:id="lblGestionClients" layoutX="27.0" layoutY="30.0" text="Gestion des commandes" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font name="Lily Script One" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnNewClient" layoutY="143.0" mnemonicParsing="false" onMouseClicked="#btnNewCommande" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" stylesheets="@application.css" text="Nouvelle commande" textFill="WHITE" AnchorPane.topAnchor="150.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttonBlanc" />
+                        <String fx:value="btnActive" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="btnEtatCommande" layoutX="10.0" layoutY="153.0" mnemonicParsing="false" onMouseClicked="#btnEtatCommande" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" styleClass="buttonBlanc" stylesheets="@application.css" text="Etat de la commande " textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="210.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+
+            <SplitPane layoutX="303.0" layoutY="28.0" prefHeight="700.0" prefWidth="897.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+      <AnchorPane layoutX="312.0" layoutY="10.0" prefHeight="700.0" prefWidth="899.0" styleClass="form" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <Label fx:id="lblInfo" layoutX="345.0" layoutY="85.0" styleClass="txtBlanchisserie" stylesheets="@application.css" text="Nouvelle commande" />
+         <Button fx:id="btnRetour" layoutX="144.0" layoutY="524.0" mnemonicParsing="false" onMouseClicked="#btnRetour" prefHeight="32.0" prefWidth="100.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Retour" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+         <Button fx:id="btnAjouterCommande" layoutX="96.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#btnAjouterCommande" prefHeight="32.0" prefWidth="739.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Ajouter" />
+         <ListView fx:id="listViewIDClient" layoutX="97.0" layoutY="551.0" prefHeight="30.0" prefWidth="347.0" styleClass="form2" stylesheets="@application.css" />
+         <Label fx:id="lblRechercher1" layoutX="96.0" layoutY="523.0" prefHeight="18.0" prefWidth="194.0" stylesheets="@application.css" text="Identifiant du client">
+            <styleClass>
+               <String fx:value="titleTextfield" />
+               <String fx:value="textbleu" />
+            </styleClass>
+         </Label>
+         <TextArea fx:id="textfileldDescription" layoutX="96.0" layoutY="444.0" prefHeight="75.0" prefWidth="739.0" styleClass="form2" stylesheets="@application.css" />
+         <Label fx:id="lblRechercher11" layoutX="96.0" layoutY="411.0" prefHeight="18.0" prefWidth="194.0" stylesheets="@application.css" text="Description">
+            <styleClass>
+               <String fx:value="titleTextfield" />
+               <String fx:value="textbleu" />
+            </styleClass>
+         </Label>
+         <Label fx:id="lblRechercher1211" layoutX="488.0" layoutY="523.0" prefHeight="18.0" prefWidth="143.0" stylesheets="@application.css" text="Total">
+            <styleClass>
+               <String fx:value="titleTextfield" />
+               <String fx:value="textbleu" />
+            </styleClass>
+         </Label>
+                  <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="257.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../com.blanchisserie.images/icones/ordre.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="textfileldTotal" layoutX="488.0" layoutY="551.0" prefHeight="30.0" prefWidth="347.0" styleClass="form2" stylesheets="@application.css" />
+                  <Pane layoutX="93.0" layoutY="164.0" prefHeight="239.0" prefWidth="184.0">
+                     <children>
+                        <ComboBox layoutY="1.0" prefHeight="27.0" prefWidth="184.0" promptText="choix du vêtement" />
+                        <TextField fx:id="couleur" layoutY="32.0" prefHeight="30.0" prefWidth="184.0" promptText="Couleur" styleClass="form2" stylesheets="@application.css" />
+                        <TextField fx:id="marque" layoutY="68.0" prefHeight="30.0" prefWidth="184.0" promptText="Marque" styleClass="form2" stylesheets="@application.css" />
+                        <TextField fx:id="qualite" layoutY="101.0" prefHeight="30.0" prefWidth="184.0" promptText="Qualité /5" styleClass="form2" stylesheets="@application.css" />
+                        <TextField fx:id="quantite" layoutY="137.0" prefHeight="30.0" prefWidth="184.0" promptText="quantité" styleClass="form2" stylesheets="@application.css" />
+                        <TextField fx:id="prix" editable="false" layoutY="172.0" prefHeight="30.0" prefWidth="184.0" promptText="prix" styleClass="form2" stylesheets="@application.css" />
+                        <CheckBox fx:id="choixLaver" layoutY="212.0" mnemonicParsing="false" text="Laver" />
+                        <CheckBox fx:id="choixRepasser" layoutX="71.0" layoutY="212.0" mnemonicParsing="false" text="Repasser" />
+                     </children>
+                  </Pane>
+                  <GridPane layoutX="93.0" layoutY="180.0" prefHeight="168.0" prefWidth="739.0" visible="false">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="165.67391967773438" minHeight="10.0" prefHeight="159.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                           <children>
+                              <ComboBox layoutY="1.0" prefHeight="27.0" prefWidth="184.0" />
+                              <TextField fx:id="textfileldTotal121" layoutY="32.0" prefHeight="30.0" prefWidth="184.0" promptText="Couleur" styleClass="form2" stylesheets="@application.css" />
+                              <TextField fx:id="textfileldTotal1121" layoutY="68.0" prefHeight="30.0" prefWidth="184.0" promptText="Marque" styleClass="form2" stylesheets="@application.css" />
+                              <TextField fx:id="textfileldTotal11121" layoutY="101.0" prefHeight="30.0" prefWidth="184.0" promptText="Qualité /5" styleClass="form2" stylesheets="@application.css" />
+                              <TextField fx:id="textfileldTotal111111" layoutY="137.0" prefHeight="30.0" prefWidth="184.0" promptText="quantité" styleClass="form2" stylesheets="@application.css" />
+                           </children></Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                           <children>
+                              <ComboBox layoutY="1.0" prefHeight="27.0" prefWidth="184.0" />
+                              <TextField fx:id="textfileldTotal12" layoutY="32.0" prefHeight="30.0" prefWidth="184.0" promptText="Couleur" styleClass="form2" stylesheets="@application.css" />
+                              <TextField fx:id="textfileldTotal112" layoutY="68.0" prefHeight="30.0" prefWidth="184.0" promptText="Marque" styleClass="form2" stylesheets="@application.css" />
+                              <TextField fx:id="textfileldTotal1112" layoutY="101.0" prefHeight="30.0" prefWidth="184.0" promptText="Qualité /5" styleClass="form2" stylesheets="@application.css" />
+                              <TextField fx:id="textfileldTotal11111" layoutY="137.0" prefHeight="30.0" prefWidth="184.0" promptText="quantité" styleClass="form2" stylesheets="@application.css" />
+                           </children></Pane>
+                        <Pane prefHeight="194.0" prefWidth="185.0">
+                           <children>
+                              <ComboBox layoutY="1.0" prefHeight="27.0" prefWidth="184.0" />
+                              <TextField fx:id="textfileldTotal1" layoutY="32.0" prefHeight="30.0" prefWidth="184.0" promptText="Couleur" styleClass="form2" stylesheets="@application.css" />
+                              <TextField fx:id="textfileldTotal11" layoutY="66.0" prefHeight="30.0" prefWidth="184.0" promptText="Marque" styleClass="form2" stylesheets="@application.css" />
+                              <TextField fx:id="textfileldTotal111" layoutY="101.0" prefHeight="30.0" prefWidth="184.0" promptText="Qualité /5" styleClass="form2" stylesheets="@application.css" />
+                              <TextField fx:id="textfileldTotal1111" layoutY="137.0" prefHeight="30.0" prefWidth="184.0" promptText="quantité" styleClass="form2" stylesheets="@application.css" />
+                           </children></Pane>
+                     </children>
+                  </GridPane>
+      </children>
+      </AnchorPane>
+         </items>
+            </SplitPane>
+
+   </children>
+</AnchorPane>

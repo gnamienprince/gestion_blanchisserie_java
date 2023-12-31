@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blanchisserie.blanchisseriemoderne.LoginController">
+    <children>
+        <Pane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fx:id="root" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../com.blanchisserie.images/backgroundLogin.jpg" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Label fx:id="labelGestion" alignment="CENTER" contentDisplay="CENTER" styleClass="txtBlanchisserie" stylesheets="@application.css" text="Gestion Blanchisserie" textAlignment="CENTER" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="10.0" />
+        <Pane prefHeight="268.0" prefWidth="358.0" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="80.0">
+            <children>
+                <VBox layoutX="-1.0" opacity="0.4" prefHeight="268.0" prefWidth="340.0" styleClass="cadreForm" stylesheets="@application.css" />
+                <ImageView fitHeight="61.0" fitWidth="66.0" layoutX="142.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../com.blanchisserie.images/connexion.png" />
+                    </image></ImageView>
+                <TextField fx:id="txtNom" layoutX="39.0" layoutY="80.0" prefHeight="28.0" prefWidth="263.0" promptText="gnamienprince" styleClass="form" stylesheets="@application.css" />
+            <PasswordField fx:id="txtMotDePasse" layoutX="41.0" layoutY="134.0" prefHeight="28.0" prefWidth="263.0" promptText="*************" styleClass="form" />
+                <CheckBox fx:id="checkChoix" layoutX="39.0" layoutY="177.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="158.0" styleClass="checkbox" stylesheets="@application.css" text="je suis un employé" />
+                <Button fx:id="btnConnexion" layoutX="39.0" layoutY="208.0" mnemonicParsing="false" onMouseClicked="#btnConnexion" prefHeight="32.0" prefWidth="117.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Connexion" />
+                <Label fx:id="labelNomUser" layoutX="39.0" layoutY="60.0" prefHeight="18.0" prefWidth="134.0" styleClass="titleTextfield" stylesheets="@application.css" text="Nom d'utilisateur" />
+                <Label fx:id="labelMdp" layoutX="39.0" layoutY="115.0" prefHeight="18.0" prefWidth="134.0" styleClass="titleTextfield" stylesheets="@application.css" text="Mot de passe" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

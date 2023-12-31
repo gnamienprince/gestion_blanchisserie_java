@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blanchisserie.blanchisseriemoderne.AttribTacheController">
+   <children>
+      <SplitPane prefHeight="900.0" prefWidth="303.0">
+         <items>
+            <AnchorPane prefHeight="606.0" prefWidth="301.0" style="-fx-background-color: #83ACE7;">
+               <children>
+                  <Label fx:id="lblGestionClients" layoutX="27.0" layoutY="30.0" text="Gestion des employés" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font name="Lily Script One" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnNewEmploye" layoutY="143.0" mnemonicParsing="false" onMouseClicked="#btnNewEmploye" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" styleClass="buttonBlanc" stylesheets="@application.css" text="Ajouter un employé" textFill="WHITE" AnchorPane.topAnchor="150.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnListeEmploye" layoutX="10.0" layoutY="153.0" mnemonicParsing="false" onMouseClicked="#btnListeEmploye" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" styleClass="buttonBlanc" stylesheets="@application.css" text="Liste des employés" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="210.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnAttribTache" layoutY="268.0" mnemonicParsing="false" onMouseClicked="#btnEtatCommande" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" stylesheets="@application.css" text="Attribution des tâches" textFill="WHITE">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttonBlanc" />
+                        <String fx:value="btnActive" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+
+            <SplitPane layoutX="303.0" layoutY="28.0" prefHeight="700.0" prefWidth="897.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+      <AnchorPane layoutX="312.0" layoutY="10.0" prefHeight="700.0" prefWidth="899.0" styleClass="form" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <Label fx:id="lblInfo" layoutX="313.0" layoutY="85.0" styleClass="txtBlanchisserie" stylesheets="@application.css" text="Attribution des tâches" />
+         <Button fx:id="btnRetour" layoutX="144.0" layoutY="524.0" mnemonicParsing="false" onMouseClicked="#btnRetour" prefHeight="32.0" prefWidth="100.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Retour" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+         <TextField fx:id="textfileldRechercheEmp" layoutX="62.0" layoutY="218.0" prefHeight="30.0" prefWidth="643.0" promptText="Rechercher par reference de l'employé :  NGU0239876" styleClass="form2" stylesheets="@application.css" />
+                  <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="224.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../com.blanchisserie.images/icones/employe.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnARechercher" layoutX="721.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#btnRechercherEmp" prefHeight="31.0" prefWidth="127.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Rechercher" />
+                  <Label layoutX="372.0" layoutY="267.0" text="INFORMATION EMPLOYE" />
+                  <Pane layoutX="63.0" layoutY="290.0" prefHeight="73.0" prefWidth="791.0" style="-fx-border-width: 1px;" styleClass="form2" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="51.0">
+                     <children>
+                        <TextField fx:id="textfileldNomEmp" editable="false" layoutX="18.0" layoutY="24.0" prefHeight="30.0" prefWidth="209.0" promptText="Kouamé" styleClass="form2" stylesheets="@application.css" />
+               <Label fx:id="lblRechercher" layoutX="18.0" layoutY="5.0" prefHeight="18.0" prefWidth="194.0" stylesheets="@application.css" text="Nom">
+                  <styleClass>
+                     <String fx:value="titleTextfield" />
+                     <String fx:value="textbleu" />
+                  </styleClass>
+               </Label>
+                        <TextField fx:id="textfileldPrenomEmp" editable="false" layoutX="250.0" layoutY="24.0" prefHeight="30.0" prefWidth="246.0" promptText="Romain" styleClass="form2" stylesheets="@application.css" />
+                        <Label fx:id="lblRechercher1" layoutX="250.0" layoutY="5.0" prefHeight="18.0" prefWidth="194.0" stylesheets="@application.css" text="Prénom">
+                           <styleClass>
+                              <String fx:value="titleTextfield" />
+                              <String fx:value="textbleu" />
+                           </styleClass>
+                        </Label>
+                        <TextField fx:id="textfileldFonctionEmp" editable="false" layoutX="520.0" layoutY="24.0" prefHeight="30.0" prefWidth="246.0" promptText="laveur" styleClass="form2" stylesheets="@application.css" />
+                        <Label fx:id="lblRechercher12" layoutX="521.0" layoutY="5.0" prefHeight="18.0" prefWidth="194.0" stylesheets="@application.css" text="Fonction">
+                           <styleClass>
+                              <String fx:value="titleTextfield" />
+                              <String fx:value="textbleu" />
+                           </styleClass>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <ScrollPane layoutX="61.0" layoutY="410.0" prefHeight="408.0" prefWidth="335.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1019.0" prefWidth="313.0">
+                           <children>
+                              <Pane fx:id="paneTache" layoutX="-1.0" layoutY="-1.0" prefHeight="95.0" prefWidth="321.0" style="-fx-background-color: #83ACE7;">
+                                 <children>
+                                    <Label layoutX="6.0" layoutY="9.0" style="-fx-text-fill: white;" text="Réference de la commande" />
+                                    <Label layoutX="6.0" layoutY="38.0" style="-fx-text-fill: white;" text="Date de la commande" />
+                                    <Label layoutX="6.0" layoutY="66.0" prefHeight="17.0" prefWidth="63.0" style="-fx-text-fill: white;" text="statut" />
+                                    <TextField fx:id="textFieldRef" editable="false" layoutX="166.0" layoutY="4.0" prefHeight="12.0" prefWidth="149.0" />
+                                    <TextField fx:id="textFielDateCommande" editable="false" layoutX="166.0" layoutY="33.0" prefHeight="12.0" prefWidth="149.0" />
+                                    <TextField fx:id="textFieldStatut" editable="false" layoutX="166.0" layoutY="62.0" prefHeight="12.0" prefWidth="149.0" />
+                                 </children>
+                              </Pane>
+                           </children></AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <Label layoutX="168.0" layoutY="389.0" text="TACHE ATTRIBUEES" />
+                  <Label layoutX="569.0" layoutY="389.0" text="ATTRIBUER UNE TACHE" />
+                  <Pane layoutX="407.0" layoutY="409.0" prefHeight="408.0" prefWidth="440.0" style="-fx-border-width: 1px;" styleClass="form2">
+                     <children>
+                        <Label fx:id="lblRechercher21" layoutX="10.0" layoutY="94.0" prefHeight="18.0" prefWidth="194.0" stylesheets="@application.css" text="Description">
+                           <styleClass>
+                              <String fx:value="titleTextfield" />
+                              <String fx:value="textbleu" />
+                           </styleClass>
+                        </Label>
+                        <Label fx:id="lblRechercher211" layoutX="10.0" layoutY="11.0" prefHeight="18.0" prefWidth="194.0" stylesheets="@application.css" text="Reference de la commande">
+                           <styleClass>
+                              <String fx:value="titleTextfield" />
+                              <String fx:value="textbleu" />
+                           </styleClass>
+                        </Label>
+                        <TextArea fx:id="TextAreaDescription" layoutX="9.0" layoutY="118.0" prefHeight="233.0" prefWidth="418.0" />
+               <Button fx:id="btnAttribuerTache" layoutX="11.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#btnAttribuerTache" prefHeight="32.0" prefWidth="418.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Attribuer" />
+                        <ListView fx:id="textFieldRefCommande" layoutX="8.0" layoutY="33.0" prefHeight="37.0" prefWidth="418.0" styleClass="form2" />
+                     </children>
+                  </Pane>
+      </children>
+      </AnchorPane>
+         </items>
+            </SplitPane>
+
+   </children>
+</AnchorPane>

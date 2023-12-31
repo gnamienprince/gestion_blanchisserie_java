@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blanchisserie.blanchisseriemoderne.GestionStockController">
+   <children>
+      <SplitPane prefHeight="700.0" prefWidth="301.0">
+         <items>
+            <AnchorPane prefHeight="700.0" prefWidth="301.0" style="-fx-background-color: #83ACE7;">
+               <children>
+                  <Label fx:id="lblGestionClients" layoutX="60.0" layoutY="32.0" text="Gestion de stocks" AnchorPane.topAnchor="32.0">
+                     <font>
+                        <Font name="Lily Script One" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnNiveauStock" layoutY="143.0" mnemonicParsing="false" onMouseClicked="#btnNiveauStock" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" stylesheets="@application.css" text="Niveau de stock" textFill="WHITE" AnchorPane.topAnchor="150.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttonBlanc" />
+                        <String fx:value="btnActive" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="btnSaveArticle" layoutX="10.0" layoutY="153.0" mnemonicParsing="false" onMouseClicked="#btnSaveArticle" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" styleClass="buttonBlanc" stylesheets="@application.css" text="Enregistrement des articles" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="210.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+
+            <SplitPane layoutX="303.0" layoutY="28.0" prefHeight="700.0" prefWidth="897.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+      <AnchorPane layoutX="312.0" layoutY="10.0" prefHeight="700.0" prefWidth="899.0" styleClass="form" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <Label fx:id="lblInfo" layoutX="361.0" layoutY="85.0" styleClass="txtBlanchisserie" stylesheets="@application.css" text="Suivi du stockage" />
+         <Button fx:id="btnRetour" layoutX="144.0" layoutY="524.0" mnemonicParsing="false" onMouseClicked="#btnRetour" prefHeight="32.0" prefWidth="100.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Retour" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                  <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="273.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../com.blanchisserie.images/icones/actions.png" />
+                     </image>
+                  </ImageView>
+                  <GridPane layoutX="55.0" layoutY="172.0" prefHeight="488.0" prefWidth="783.0" stylesheets="@application.css">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0" styleClass="cardreArondiStockage" stylesheets="@application.css">
+                           <children>
+                              <ImageView fitHeight="126.0" fitWidth="138.0" layoutX="27.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../com.blanchisserie.images/produit/1.jpg" />
+                                 </image>
+                              </ImageView>
+                              <VBox layoutX="172.0" layoutY="19.0" prefHeight="94.0" prefWidth="164.0" spacing="10.0">
+                                 <children>
+                                    <Label text="OMO12345">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="POUVRE A LESSIVE">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="345">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="btnRetour1" layoutX="172.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#btnRetour" prefHeight="32.0" prefWidth="164.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Réapprovissionner" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </GridPane.margin></Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" styleClass="cardreArondiStockage" stylesheets="@application.css" GridPane.columnIndex="1">
+                           <children>
+                              <ImageView fitHeight="126.0" fitWidth="138.0" layoutX="27.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../com.blanchisserie.images/produit/images.jpg" />
+                                 </image>
+                              </ImageView>
+                              <VBox layoutX="172.0" layoutY="19.0" prefHeight="94.0" prefWidth="164.0" spacing="10.0">
+                                 <children>
+                                    <Label text="SAVON12345">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="SAVON">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="245">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="btnRetour11" layoutX="172.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#btnRetour" prefHeight="32.0" prefWidth="164.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Réapprovissionner" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </GridPane.margin>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" styleClass="cardreArondiStockage" stylesheets="@application.css" GridPane.rowIndex="1">
+                           <children>
+                              <ImageView fitHeight="126.0" fitWidth="138.0" layoutX="27.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../com.blanchisserie.images/produit/eau-de-javel-la-croix-desinfectant-15l.jpg" />
+                                 </image>
+                              </ImageView>
+                              <VBox layoutX="172.0" layoutY="19.0" prefHeight="94.0" prefWidth="164.0" spacing="10.0">
+                                 <children>
+                                    <Label text="JAV1323">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="JAVEL">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="24">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="btnRetour111" layoutX="172.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#btnRetour" prefHeight="32.0" prefWidth="164.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Réapprovissionner" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </GridPane.margin>
+                        </Pane>
+                     </children>
+                  </GridPane>
+      </children>
+      </AnchorPane>
+         </items>
+            </SplitPane>
+
+   </children>
+</AnchorPane>

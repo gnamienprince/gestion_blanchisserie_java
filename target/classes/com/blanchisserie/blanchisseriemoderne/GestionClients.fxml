@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blanchisserie.blanchisseriemoderne.GestionClientsController">
+   <children>
+      <AnchorPane layoutX="-3.0" prefHeight="700.0" prefWidth="301.0" style="-fx-background-color: #83ACE7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="899.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label id="lblGestion" fx:id="lblGestion" layoutX="54.0" layoutY="14.0" text="Gestion des clients" AnchorPane.topAnchor="30.0">
+               <font>
+                  <Font name="Lily Script One" size="24.0" />
+               </font>
+            </Label>
+            <Button id="btnNewClient" fx:id="btnNewClient" layoutY="143.0" mnemonicParsing="false" onMouseClicked="#btnNewClient" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" stylesheets="@application.css" text="Nouveau client" textFill="WHITE" AnchorPane.topAnchor="150.0">
+               <font>
+                  <Font size="9.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="buttonBlanc" />
+                  <String fx:value="btnActive" />
+               </styleClass>
+            </Button>
+            <Button id="btnInfo" fx:id="btnInfoClient" layoutX="10.0" layoutY="153.0" mnemonicParsing="false" onMouseClicked="#btnInfoClient" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" styleClass="buttonBlanc" stylesheets="@application.css" text="Information client" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="210.0">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="312.0" layoutY="10.0" prefHeight="700.0" prefWidth="899.0" styleClass="form" stylesheets="@application.css" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label id="lblNewClient" fx:id="lblNewClient" layoutX="387.0" layoutY="85.0" styleClass="txtBlanchisserie" stylesheets="@application.css" text="Nouveau client" />
+            <TextField fx:id="txtFieldNom" layoutX="134.0" layoutY="258.0" prefHeight="28.0" prefWidth="263.0" promptText="N'guessan" styleClass="form2" stylesheets="@application.css" />
+            <Label id="lblNom" layoutX="135.0" layoutY="238.0" prefHeight="18.0" prefWidth="134.0" stylesheets="@application.css" text="Nom">
+               <styleClass>
+                  <String fx:value="titleTextfield" />
+                  <String fx:value="textbleu" />
+               </styleClass></Label>
+            <TextField fx:id="txtFieldPrenom" layoutX="423.0" layoutY="258.0" prefHeight="30.0" prefWidth="371.0" promptText="gnamien prince" styleClass="form2" stylesheets="@application.css" />
+            <Label id="lblPrenom" layoutX="424.0" layoutY="238.0" prefHeight="18.0" prefWidth="134.0" stylesheets="@application.css" text="Prenom">
+               <styleClass>
+                  <String fx:value="titleTextfield" />
+                  <String fx:value="textbleu" />
+               </styleClass></Label>
+            <TextField fx:id="txtFieldNumero" layoutX="134.0" layoutY="345.0" prefHeight="28.0" prefWidth="263.0" promptText="0788391691" styleClass="form2" stylesheets="@application.css" />
+            <Label layoutX="135.0" layoutY="325.0" prefHeight="18.0" prefWidth="134.0" stylesheets="@application.css" text="Numéro de telphone">
+               <styleClass>
+                  <String fx:value="titleTextfield" />
+                  <String fx:value="textbleu" />
+               </styleClass>
+            </Label>
+            <TextField fx:id="txtFieldEmail" layoutX="423.0" layoutY="345.0" prefHeight="30.0" prefWidth="371.0" promptText="nguessanprince8@gmail.com" styleClass="form2" stylesheets="@application.css" />
+            <Label layoutX="424.0" layoutY="325.0" prefHeight="18.0" prefWidth="134.0" stylesheets="@application.css" text="E-mail">
+               <styleClass>
+                  <String fx:value="titleTextfield" />
+                  <String fx:value="textbleu" />
+               </styleClass>
+            </Label>
+            <TextField fx:id="txtFieldLocal" layoutX="134.0" layoutY="430.0" prefHeight="30.0" prefWidth="661.0" styleClass="form2" stylesheets="@application.css" />
+            <Label layoutX="135.0" layoutY="410.0" prefHeight="18.0" prefWidth="134.0" stylesheets="@application.css" text="Localisation">
+               <styleClass>
+                  <String fx:value="titleTextfield" />
+                  <String fx:value="textbleu" />
+               </styleClass>
+            </Label>
+            <Button fx:id="btnEnregistrer" layoutX="134.0" layoutY="514.0" mnemonicParsing="false" onMouseClicked="#btnEnregistrer" prefHeight="32.0" prefWidth="661.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Enregistrer" />
+            <Button fx:id="btnRetour" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#btnRetour" prefHeight="32.0" prefWidth="100.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Retour" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+            <ImageView fitHeight="96.0" fitWidth="94.0" layoutX="278.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../com.blanchisserie.images/icones/supporter.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

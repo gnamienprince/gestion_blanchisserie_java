@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blanchisserie.blanchisseriemoderne.EtatCommandeController">
+   <children>
+      <SplitPane prefHeight="700.0" prefWidth="301.0">
+         <items>
+            <AnchorPane prefHeight="700.0" prefWidth="301.0" style="-fx-background-color: #83ACE7;">
+               <children>
+                  <Label fx:id="lblGestionClients" layoutX="27.0" layoutY="30.0" text="Gestion des commandes" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font name="Lily Script One" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnNewClient" layoutY="143.0" mnemonicParsing="false" onMouseClicked="#btnNewCommande" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" styleClass="buttonBlanc" stylesheets="@application.css" text="Nouvelle commande" textFill="WHITE" AnchorPane.topAnchor="150.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnEtatCommande" layoutX="10.0" layoutY="153.0" mnemonicParsing="false" onMouseClicked="#btnEtatCommande" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" stylesheets="@application.css" text="Etat de la commande " textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="210.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttonBlanc" />
+                        <String fx:value="btnActive" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+
+            <SplitPane layoutX="303.0" layoutY="28.0" prefHeight="700.0" prefWidth="897.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+      <AnchorPane layoutX="312.0" layoutY="10.0" prefHeight="700.0" prefWidth="899.0" styleClass="form" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <Label fx:id="lblInfo" layoutX="350.0" layoutY="85.0" styleClass="txtBlanchisserie" stylesheets="@application.css" text="Etat des commandes" />
+         <Button fx:id="btnRetour" layoutX="144.0" layoutY="524.0" mnemonicParsing="false" onMouseClicked="#btnRetour" prefHeight="32.0" prefWidth="100.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Retour" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                  <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="262.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../com.blanchisserie.images/icones/ordre.png" />
+                     </image>
+                  </ImageView>
+                  <TableView layoutX="78.0" layoutY="231.0" prefHeight="441.0" prefWidth="739.0" style="-fx-background-color: #83ACE7;">
+                    <columns>
+                      <TableColumn prefWidth="134.0" text="Reference" />
+                      <TableColumn minWidth="6.0" prefWidth="128.0" text="Nom" />
+                        <TableColumn prefWidth="193.0" text="Prenom" />
+                        <TableColumn prefWidth="149.0" text="Date de la commande" />
+                        <TableColumn prefWidth="134.0" text="Statuts" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="textfileldRechercher" layoutX="78.0" layoutY="183.0" prefHeight="30.0" prefWidth="625.0" promptText="reference de la commande" styleClass="form2" stylesheets="@application.css" />
+                  <Button fx:id="btnRechercher" layoutX="717.0" layoutY="182.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Rechercher" />
+      </children>
+      </AnchorPane>
+         </items>
+            </SplitPane>
+
+   </children>
+</AnchorPane>

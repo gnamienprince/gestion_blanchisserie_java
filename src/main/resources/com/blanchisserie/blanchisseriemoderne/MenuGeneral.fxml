@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blanchisserie.blanchisseriemoderne.MenuController">
+   <children>
+      <Label layoutX="183.0" styleClass="txtBlanchisserie" stylesheets="@application.css" text="Menu Général" />
+      <Button layoutX="516.0" layoutY="15.0" mnemonicParsing="false" prefHeight="3.0" prefWidth="70.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Déconnexion" textFill="WHITE">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+      <Pane layoutX="81.0" layoutY="80.0" prefHeight="139.0" prefWidth="454.0" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="81.0">
+         <children>
+            <Pane prefHeight="138.0" prefWidth="138.0">
+               <children>
+                  <Pane layoutX="28.0" layoutY="14.0" prefHeight="82.0" prefWidth="82.0" style="-fx-background-color: #83ACE7;">
+                     <children>
+                        <ImageView fx:id="btnClient" fitHeight="61.0" fitWidth="61.0" layoutX="11.0" layoutY="11.0" onMouseClicked="#gestionClient" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../com.blanchisserie.images/icones/supporter.png" />
+                           </image></ImageView>
+                     </children>
+                  </Pane>
+                  <Label layoutX="17.0" layoutY="104.0" text="Gestion des clients">
+                     <font>
+                        <Font name="Lily Script One" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="302.0" prefHeight="138.0" prefWidth="138.0">
+               <children>
+                  <Pane layoutX="28.0" layoutY="14.0" prefHeight="82.0" prefWidth="82.0" style="-fx-background-color: #83ACE7;">
+                     <children>
+                        <ImageView fx:id="btnStock" fitHeight="61.0" fitWidth="61.0" layoutX="11.0" layoutY="11.0" onMouseClicked="#gestionStock" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../com.blanchisserie.images/icones/actions.png" />
+                           </image></ImageView>
+                     </children>
+                  </Pane>
+                  <Label layoutX="17.0" layoutY="104.0" text="Gestion des stocks">
+                     <font>
+                        <Font name="Lily Script One" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="151.0" prefHeight="138.0" prefWidth="138.0">
+               <children>
+                  <Pane layoutX="28.0" layoutY="14.0" prefHeight="82.0" prefWidth="82.0" style="-fx-background-color: #83ACE7;">
+                     <children>
+                        <ImageView fx:id="btnCommande" fitHeight="61.0" fitWidth="61.0" layoutX="11.0" layoutY="11.0" onMouseClicked="#gestionCommande" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../com.blanchisserie.images/icones/ordre.png" />
+                           </image></ImageView>
+                     </children>
+                  </Pane>
+                  <Label layoutX="1.0" layoutY="104.0" text="Gestion des commandes">
+                     <font>
+                        <Font name="Lily Script One" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children></Pane>
+      <Pane layoutX="81.0" layoutY="217.0" prefHeight="139.0" prefWidth="454.0" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="81.0">
+         <children>
+            <Pane prefHeight="138.0" prefWidth="138.0">
+               <children>
+                  <Pane layoutX="28.0" layoutY="14.0" prefHeight="82.0" prefWidth="82.0" style="-fx-background-color: #83ACE7;">
+                     <children>
+                        <ImageView fx:id="btnfacture" fitHeight="61.0" fitWidth="61.0" layoutX="11.0" layoutY="11.0" onMouseClicked="#gestionFacturation" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../com.blanchisserie.images/icones/facture-dachat.png" />
+                           </image></ImageView>
+                     </children>
+                  </Pane>
+                  <Label layoutX="2.0" layoutY="104.0" text="Facturation et paiement">
+                     <font>
+                        <Font name="Lily Script One" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="302.0" prefHeight="138.0" prefWidth="138.0">
+               <children>
+                  <Pane layoutX="28.0" layoutY="14.0" prefHeight="82.0" prefWidth="82.0" style="-fx-background-color: #83ACE7;">
+                     <children>
+                        <ImageView fx:id="btnEmployes" fitHeight="61.0" fitWidth="61.0" layoutX="11.0" layoutY="11.0" onMouseClicked="#gestionEmploye" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../com.blanchisserie.images/icones/employe.png" />
+                           </image></ImageView>
+                     </children>
+                  </Pane>
+                  <Label layoutX="8.0" layoutY="104.0" text="Gestion des employés">
+                     <font>
+                        <Font name="Lily Script One" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="151.0" prefHeight="138.0" prefWidth="138.0">
+               <children>
+                  <Pane layoutX="28.0" layoutY="14.0" prefHeight="82.0" prefWidth="82.0" style="-fx-background-color: #83ACE7;">
+                     <children>
+                        <ImageView fx:id="btnPlanification" fitHeight="61.0" fitWidth="61.0" layoutX="11.0" layoutY="11.0" onMouseClicked="#gestionPlanification" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../com.blanchisserie.images/icones/expedie.png" />
+                           </image></ImageView>
+                     </children>
+                  </Pane>
+                  <Label layoutX="5.0" layoutY="106.0" text="Planification des livraisons">
+                     <font>
+                        <Font name="Lily Script One" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="81.0" layoutY="361.0" prefHeight="139.0" prefWidth="454.0">
+         <children>
+            <Pane prefHeight="138.0" prefWidth="138.0">
+               <children>
+                  <Pane layoutX="28.0" layoutY="14.0" prefHeight="82.0" prefWidth="82.0" style="-fx-background-color: #83ACE7;">
+                     <children>
+                        <ImageView fx:id="btnAricleClient" fitHeight="61.0" fitWidth="61.0" layoutX="11.0" layoutY="11.0" onMouseClicked="#articlesClient" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../com.blanchisserie.images/icones/articles-dachat.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Label layoutX="30.0" layoutY="104.0" text="Articles client">
+                     <font>
+                        <Font name="Lily Script One" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="302.0" prefHeight="138.0" prefWidth="138.0" visible="false">
+               <children>
+                  <Pane layoutX="28.0" layoutY="14.0" prefHeight="82.0" prefWidth="82.0" style="-fx-background-color: #83ACE7;" visible="false">
+                     <children>
+                        <ImageView fitHeight="61.0" fitWidth="61.0" layoutX="11.0" layoutY="11.0" onMouseClicked="#gestionEmploye" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="8.0" layoutY="104.0" text="Gestion des employés">
+                     <font>
+                        <Font name="Lily Script One" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="151.0" prefHeight="138.0" prefWidth="138.0">
+               <children>
+                  <Pane layoutX="28.0" layoutY="14.0" prefHeight="82.0" prefWidth="82.0" style="-fx-background-color: #83ACE7;">
+                     <children>
+                        <ImageView fx:id="btnStatisqtique" fitHeight="61.0" fitWidth="61.0" layoutX="11.0" layoutY="11.0" onMouseClicked="#statistiques" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../com.blanchisserie.images/icones/statistiques.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Label layoutX="38.0" layoutY="106.0" text="StatistiUques">
+                     <font>
+                        <Font name="Lily Script One" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
