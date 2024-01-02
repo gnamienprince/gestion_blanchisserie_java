@@ -2,23 +2,23 @@ package com.blanchisserie.blanchisseriemoderne;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class AttribTacheController {
-
+    Connection cnx;
     private Parent fxml;
 
     @FXML
@@ -99,6 +99,13 @@ public class AttribTacheController {
     @FXML
     private ListView<?> textFieldRefCommande;
 
+    //fonction de renseignement du nom et prenom de l'employé
+    public void initInfo(String nom, String prenom, String fonction) {
+        textfileldNomEmp.setText(nom);
+        textfileldPrenomEmp.setText(prenom);
+        textfileldFonctionEmp.setText(fonction);
+    }
+
     @FXML
     void btnAttribuerTache(MouseEvent event) {
 
@@ -106,7 +113,46 @@ public class AttribTacheController {
 
     @FXML
     void btnRechercherEmp(MouseEvent event) {
+        String idEmploye = textfileldRechercheEmp.getText();
+        if(idEmploye.isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Veuillez renseigner l'identifiant de l'employé", ButtonType.OK);
+            alert.showAndWait();
+        }else{
+            String sql = "select * from employe where idEmploye = ?";
 
+            PreparedStatement pstmt = null;
+            try {
+                pstmt = cnx.prepareStatement(sql);
+                pstmt.setString(1, idEmploye);
+
+                ResultSet rs = pstmt.executeQuery();
+
+                if(rs.next()) {
+
+                    //ici on recupère les données de l'employé pour l'afficher dans un textfield
+
+                    String nom = rs.getString("nomEmploye");
+                    String prenom = rs.getString("prenomEmploye");
+                    String fonction = rs.getString("fonctionEmploye");
+
+                    //on affiche dans la console pour voir un peu
+
+                    System.out.println("Nom : " + nom);
+                    System.out.println("Prénom : " + prenom);
+                    System.out.println("Fonction : " + fonction);
+
+                    //appel de la fonction renseignement
+                    initInfo(nom,prenom,fonction);
+
+
+                }else{
+                    Alert alert = new Alert(Alert.AlertType.ERROR,"Cet identifiant n'existe pas dans la base de donnée", ButtonType.OK);
+                    alert.showAndWait();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @FXML
@@ -158,6 +204,7 @@ public class AttribTacheController {
 
     @FXML
     void initialize() {
+                cnx = ConnexionMySQL.ConnexionDB();
         assert root != null : "fx:id=\"root\" was not injected: check your FXML file 'AttribTache.fxml'.";
         assert lblGestionClients != null : "fx:id=\"lblGestionClients\" was not injected: check your FXML file 'AttribTache.fxml'.";
         assert btnNewEmploye != null : "fx:id=\"btnNewEmploye\" was not injected: check your FXML file 'AttribTache.fxml'.";

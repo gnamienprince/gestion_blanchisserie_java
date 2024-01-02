@@ -2,6 +2,7 @@
 
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
@@ -110,9 +111,9 @@
                   <TextField fx:id="textfileldTelEmp" layoutX="97.0" layoutY="330.0" prefHeight="30.0" prefWidth="353.0" promptText="0788391691" styleClass="form2" stylesheets="@application.css" />
                   <TextField fx:id="textfileldEmailEmp" layoutX="482.0" layoutY="330.0" prefHeight="30.0" prefWidth="353.0" promptText="exemple@gmail.com" styleClass="form2" stylesheets="@application.css" />
                   <TextField fx:id="textfileldFonctEmp" layoutX="97.0" layoutY="420.0" prefHeight="30.0" prefWidth="353.0" promptText="laveur" styleClass="form2" stylesheets="@application.css" />
-                  <TextField fx:id="textfileldDateEmbEmp" layoutX="482.0" layoutY="420.0" prefHeight="30.0" prefWidth="353.0" promptText="10/01/2001" styleClass="form2" stylesheets="@application.css" />
                   <TextField fx:id="textfileldSalaireEmp" layoutX="97.0" layoutY="510.0" prefHeight="30.0" prefWidth="353.0" promptText="xxxx" styleClass="form2" stylesheets="@application.css" />
                   <TextField fx:id="textfileldAdresseEmp" layoutX="482.0" layoutY="510.0" prefHeight="30.0" prefWidth="353.0" promptText="Abidjan cocody mermoz" styleClass="form2" stylesheets="@application.css" />
+                  <DatePicker fx:id="textfileldDateEmbEmp" editable="false" layoutX="482.0" layoutY="421.0" prefHeight="29.0" prefWidth="353.0" styleClass="form2" stylesheets="@application.css" />
       </children>
       </AnchorPane>
          </items>

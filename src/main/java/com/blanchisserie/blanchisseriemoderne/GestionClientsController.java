@@ -26,6 +26,7 @@ public class GestionClientsController {
     @FXML
     private AnchorPane root;
 
+
     @FXML
     void btnInfoClient(MouseEvent event) {
         root.getScene().getWindow().hide();

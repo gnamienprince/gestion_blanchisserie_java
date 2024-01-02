@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="root" minHeight="-Infinity" minWidth="-Infinity" prefHeight="379.0" prefWidth="500.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blanchisserie.blanchisseriemoderne.AjoutArticleController">
+   <children>
+<Label fx:id="lblInfo" layoutX="233.0" layoutY="40.0" styleClass="txtBlanchisserie" stylesheets="@application.css" text="Article" />
+      <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="150.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../com.blanchisserie.images/icones/blocs-de-nombres.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="158.0" layoutY="126.0" prefHeight="175.0" prefWidth="184.0">
+         <children>
+            <ComboBox fx:id="cmbChoix" layoutY="1.0" prefHeight="27.0" prefWidth="184.0" promptText="choix du vêtement" />
+            <TextField fx:id="couleur" layoutY="32.0" prefHeight="30.0" prefWidth="184.0" promptText="Couleur" styleClass="form2" stylesheets="@application.css" />
+            <TextField fx:id="marque" layoutY="68.0" prefHeight="30.0" prefWidth="184.0" promptText="Marque" styleClass="form2" stylesheets="@application.css" />
+            <TextField fx:id="qualite" layoutY="101.0" prefHeight="30.0" prefWidth="184.0" promptText="Qualité /5" styleClass="form2" stylesheets="@application.css" />
+            <CheckBox fx:id="choixLaver" layoutY="141.0" mnemonicParsing="false" text="Laver" />
+            <CheckBox fx:id="choixRepasser" layoutX="71.0" layoutY="141.0" mnemonicParsing="false" text="Repasser" />
+         </children>
+      </Pane>
+      <Button fx:id="btnAjouter" layoutX="158.0" layoutY="294.0" mnemonicParsing="false" onMouseClicked="#btnAjouter" prefHeight="32.0" prefWidth="184.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Ajouter" />
+
+   </children>
+</AnchorPane>

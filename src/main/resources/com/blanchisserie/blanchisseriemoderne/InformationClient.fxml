@@ -49,17 +49,17 @@
                </styleClass>
             </Label>
             <Button fx:id="btnRetour" layoutX="144.0" layoutY="524.0" mnemonicParsing="false" onMouseClicked="#btnRetour" prefHeight="32.0" prefWidth="100.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Retour" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
-            <TableView fx:id="tableInfoClient" blendMode="DARKEN" layoutX="63.0" layoutY="299.0" prefHeight="367.0" prefWidth="776.0" style="-fx-background-color: #83ACE7;" stylesheets="@application.css">
+            <TableView fx:id="tableInfoClient" blendMode="DARKEN" layoutX="63.0" layoutY="299.0" prefHeight="367.0" prefWidth="776.0" stylesheets="@application.css">
               <columns>
-                <TableColumn fx:id="celNom" prefWidth="142.0" text="Nom" />
-                <TableColumn fx:id="celPrenom" prefWidth="186.00003051757812" text="Prenom" />
-                  <TableColumn fx:id="celEmail" prefWidth="174.0" text="E-mail" />
-                  <TableColumn fx:id="celNumero" prefWidth="147.0" text="Numéro" />
-                  <TableColumn fx:id="celInfo" prefWidth="129.0" text="Plus d'informations" />
+                <TableColumn fx:id="celNom" prefWidth="122.0" text="Nom" />
+                <TableColumn fx:id="celPrenom" prefWidth="163.0" text="Prenom" />
+                  <TableColumn fx:id="celEmail" prefWidth="203.0" text="E-mail" />
+                  <TableColumn fx:id="celNumero" prefWidth="162.0" text="Numéro" />
+                  <TableColumn fx:id="celAdresse" prefWidth="129.0" text="Adresse" />
               </columns>
             </TableView>
             <TextField fx:id="textfileldRechercher" layoutX="63.0" layoutY="242.0" prefHeight="30.0" prefWidth="654.0" styleClass="form2" stylesheets="@application.css" />
-            <Button fx:id="btnRechercher" layoutX="739.0" layoutY="241.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Rechercher" />
+            <Button fx:id="btnRechercher" layoutX="739.0" layoutY="241.0" mnemonicParsing="false" onMouseClicked="#btnRechercher" prefHeight="32.0" prefWidth="100.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Rechercher" />
          </children>
       </AnchorPane>
    </children>

@@ -2,21 +2,24 @@ package com.blanchisserie.blanchisseriemoderne;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class GestionEmployeController {
-
+    Connection cnx;
     private Parent fxml;
+
+    public PreparedStatement st;
+    public ResultSet result;
 
     @FXML
     private ResourceBundle resources;
@@ -87,8 +90,10 @@ public class GestionEmployeController {
     @FXML
     private TextField textfileldFonctEmp;
 
+
     @FXML
-    private TextField textfileldDateEmbEmp;
+    private DatePicker textfileldDateEmbEmp;
+
 
     @FXML
     private TextField textfileldSalaireEmp;
@@ -98,6 +103,70 @@ public class GestionEmployeController {
 
     @FXML
     void btnEnregistrerEmp(MouseEvent event) {
+        //enregistrer un employé
+        String nom = textfileldNomEmp.getText();
+        String prenom = textfileldPrenomEmp.getText();
+        String numero = textfileldTelEmp.getText();
+        String email = textfileldEmailEmp.getText();
+        String fonction = textfileldFonctEmp.getText();
+        LocalDate dateEmbauche = textfileldDateEmbEmp.getValue();
+        String salaire = textfileldSalaireEmp.getText();
+        String adresse = textfileldAdresseEmp.getText();
+
+        //System.out.println(dateEmbauche);
+
+        if(nom.isEmpty() && prenom.isEmpty() && numero.isEmpty() && email.isEmpty() && fonction.isEmpty() && dateEmbauche == null && salaire.isEmpty() && adresse.isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Veuillez renseigner tout les champs", ButtonType.OK);
+            alert.showAndWait();
+        }else {
+            int salaireInt = Integer.parseInt(salaire);
+
+            //generation de l'id
+            String idEmploye = nom.substring(0,3) + prenom.substring(0,3) + numero.substring(6);
+
+            //hasher un mot de passe
+            //String motDePasse = BCrypt.hashpw(idEmploye, BCrypt.gensalt());
+            // insertion dans la base de donnée
+
+            //pour l'instant le mot de passe c'est l'id employé
+            //a changé avec le code hasher
+
+            String sql ="INSERT INTO employe (idEmploye, nomEmploye, prenomEmploye, adresseEmploye, telEmploye, dateEmbEmploye, salaireEmploye, motDePasseEmploye, fonctionEmploye) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement st = cnx.prepareStatement(sql);
+                st.setString(1, idEmploye);
+                st.setString(2, nom);
+                st.setString(3, prenom);
+                st.setString(4, adresse);
+                st.setString(5, numero);
+                st.setDate(6, Date.valueOf(dateEmbauche));
+                st.setInt(7, salaireInt);
+                st.setString(8, idEmploye);
+                st.setString(9, fonction);
+                int rowsInserted = st.executeUpdate();
+
+                if (rowsInserted > 0) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION,"Enregistrement de l'employé effectué", ButtonType.OK);
+                    alert.showAndWait();
+
+                    textfileldNomEmp.clear();
+                    textfileldPrenomEmp.clear();
+                    textfileldTelEmp.clear();
+                    textfileldEmailEmp.clear();
+                    textfileldFonctEmp.clear();
+                    textfileldSalaireEmp.clear();
+                    textfileldAdresseEmp.clear();
+
+
+                }else{
+                    Alert alert = new Alert(Alert.AlertType.ERROR,"Echec de l'enregistrement", ButtonType.OK);
+                    alert.showAndWait();
+                }
+            }
+            catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
     }
 
@@ -166,6 +235,8 @@ public class GestionEmployeController {
 
     @FXML
     void initialize() {
+        cnx = ConnexionMySQL.ConnexionDB();
+
         assert root != null : "fx:id=\"root\" was not injected: check your FXML file 'GestionEmploye.fxml'.";
         assert lblGestionClients != null : "fx:id=\"lblGestionClients\" was not injected: check your FXML file 'GestionEmploye.fxml'.";
         assert btnNewEmploye != null : "fx:id=\"btnNewEmploye\" was not injected: check your FXML file 'GestionEmploye.fxml'.";

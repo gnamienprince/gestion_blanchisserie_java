@@ -18,7 +18,7 @@
             <Image url="@../../../com.blanchisserie.images/icones/articles-dachat.png" />
          </image>
       </ImageView>
-      <TextField fx:id="textfileldTotal1" layoutX="321.0" layoutY="191.0" prefHeight="30.0" prefWidth="413.0" styleClass="form2" stylesheets="@application.css" />
+      <TextField fx:id="textfileldLibelle" layoutX="321.0" layoutY="191.0" prefHeight="30.0" prefWidth="413.0" styleClass="form2" stylesheets="@application.css" />
       <Label fx:id="lblRechercher1" layoutX="322.0" layoutY="171.0" prefHeight="18.0" prefWidth="194.0" stylesheets="@application.css" text="Libéllé de l'article">
          <styleClass>
             <String fx:value="titleTextfield" />

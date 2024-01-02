@@ -71,7 +71,7 @@ public class InformationClientController {
     private TableColumn<Client, String> celNumero;
 
     @FXML
-    private TableColumn<Client, String> celInfo;
+    private TableColumn<Client, String> celAdresse;
 
 
     @FXML
@@ -108,6 +108,46 @@ public class InformationClientController {
         }
     }
 
+    //btn de recherche de client
+    @FXML
+    void btnRechercher(MouseEvent event){
+        //System.out.println("test");
+        String nom = textfileldRechercher.getText();
+        String sql = "select * from client where nomClient = ?";
+
+        try {
+            PreparedStatement st = cnx.prepareStatement(sql);
+
+            // Définir la valeur pour le paramètre de la requête
+            st.setString(1, nom);
+
+            // Exécuter la requête de sélection
+            ResultSet rs = st.executeQuery();
+
+            if (rs.next()) {
+                //afficher la liste des noms maintenant
+
+                while (result.next()){
+                    data.add(new Client(result.getString("nomClient"),result.getString("prenomClient"),result.getString("telClient"),result.getString("emailClient"), result.getString("adresseClient")));
+                }
+            }else {
+                //si le nom mentionner n'existe pas dans la base de donnée
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Ce nom d'existe pas dans la base de donnée", ButtonType.OK);
+                alert.showAndWait();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        celNom.setCellValueFactory(new PropertyValueFactory<Client, String>("nomClient"));
+        celPrenom.setCellValueFactory(new PropertyValueFactory<Client, String>("prenomClient"));
+        celEmail.setCellValueFactory(new PropertyValueFactory<Client, String>("emailClient"));
+        celNumero.setCellValueFactory(new PropertyValueFactory<Client, String>("telClient"));
+        celAdresse.setCellValueFactory(new PropertyValueFactory<Client, String>("adresseClient"));
+
+        tableInfoClient.setItems(data);
+    }
+
     @FXML
     void btnRetour(MouseEvent event) {
         root.getScene().getWindow().hide();
@@ -131,7 +171,7 @@ public class InformationClientController {
             st = cnx.prepareStatement(sql);
             result = st.executeQuery();
             while (result.next()){
-                data.add(new Client(result.getString("nomClient"),result.getString("prenomClient"),result.getString("telClient"),result.getString("emailClient")));
+                data.add(new Client(result.getString("nomClient"),result.getString("prenomClient"),result.getString("telClient"),result.getString("emailClient"), result.getString("adresseClient")));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -141,6 +181,7 @@ public class InformationClientController {
         celPrenom.setCellValueFactory(new PropertyValueFactory<Client, String>("prenomClient"));
         celEmail.setCellValueFactory(new PropertyValueFactory<Client, String>("emailClient"));
         celNumero.setCellValueFactory(new PropertyValueFactory<Client, String>("telClient"));
+        celAdresse.setCellValueFactory(new PropertyValueFactory<Client, String>("adresseClient"));
 
         tableInfoClient.setItems(data);
     }

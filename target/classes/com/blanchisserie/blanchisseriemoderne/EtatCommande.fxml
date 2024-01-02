@@ -53,13 +53,13 @@
                         <Image url="@../../../com.blanchisserie.images/icones/ordre.png" />
                      </image>
                   </ImageView>
-                  <TableView layoutX="78.0" layoutY="231.0" prefHeight="441.0" prefWidth="739.0" style="-fx-background-color: #83ACE7;">
+                  <TableView fx:id="tableauCommande" layoutX="78.0" layoutY="231.0" prefHeight="441.0" prefWidth="739.0" style="-fx-background-color: #83ACE7;">
                     <columns>
-                      <TableColumn prefWidth="134.0" text="Reference" />
-                      <TableColumn minWidth="6.0" prefWidth="128.0" text="Nom" />
-                        <TableColumn prefWidth="193.0" text="Prenom" />
-                        <TableColumn prefWidth="149.0" text="Date de la commande" />
-                        <TableColumn prefWidth="134.0" text="Statuts" />
+                      <TableColumn fx:id="cellReference" prefWidth="239.0" text="Reference" />
+                      <TableColumn fx:id="cellNom" minWidth="6.0" prefWidth="92.0" text="Nom" />
+                        <TableColumn fx:id="cellPrenom" prefWidth="176.0" text="Prenom" />
+                        <TableColumn fx:id="cellDate" prefWidth="153.0" text="Date de la commande" />
+                        <TableColumn fx:id="cellStatuts" prefWidth="78.0" text="Statuts" />
                     </columns>
                   </TableView>
                   <TextField fx:id="textfileldRechercher" layoutX="78.0" layoutY="183.0" prefHeight="30.0" prefWidth="625.0" promptText="reference de la commande" styleClass="form2" stylesheets="@application.css" />

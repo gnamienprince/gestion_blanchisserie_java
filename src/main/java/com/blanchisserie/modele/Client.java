@@ -6,16 +6,24 @@ public class Client {
     String prenomClient;
     String telClient;
     String emailClient;
+    String adresseClient;
 
-    public  Client(String nomClient, String prenomClient, String telClient, String emailClient){
+    public  Client(String nomClient, String prenomClient, String telClient, String emailClient, String adresseClient){
 
         this.nomClient = nomClient;
         this.prenomClient = prenomClient;
         this.telClient = telClient;
         this.emailClient = emailClient;
+        this.adresseClient = adresseClient;
     }
 
+    public String getAdresseClient() {
+        return adresseClient;
+    }
 
+    public void setAdresseClient(String adresseClient) {
+        this.adresseClient = adresseClient;
+    }
 
     public String getNomClient() {
         return nomClient;

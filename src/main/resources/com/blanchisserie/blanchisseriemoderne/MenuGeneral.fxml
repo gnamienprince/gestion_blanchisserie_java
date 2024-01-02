@@ -144,14 +144,17 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="302.0" prefHeight="138.0" prefWidth="138.0" visible="false">
+            <Pane layoutX="302.0" prefHeight="138.0" prefWidth="138.0">
                <children>
-                  <Pane layoutX="28.0" layoutY="14.0" prefHeight="82.0" prefWidth="82.0" style="-fx-background-color: #83ACE7;" visible="false">
+                  <Pane layoutX="28.0" layoutY="14.0" prefHeight="82.0" prefWidth="82.0" style="-fx-background-color: #83ACE7;">
                      <children>
-                        <ImageView fitHeight="61.0" fitWidth="61.0" layoutX="11.0" layoutY="11.0" onMouseClicked="#gestionEmploye" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="61.0" fitWidth="61.0" layoutX="11.0" layoutY="11.0" onMouseClicked="#gestionEmploye" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../com.blanchisserie.images/icones/reglage.png" />
+                           </image></ImageView>
                      </children>
                   </Pane>
-                  <Label layoutX="8.0" layoutY="104.0" text="Gestion des employés">
+                  <Label layoutX="17.0" layoutY="104.0" text="Paramètre session">
                      <font>
                         <Font name="Lily Script One" size="13.0" />
                      </font>
