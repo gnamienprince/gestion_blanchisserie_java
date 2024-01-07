@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 
 import com.blanchisserie.modele.Client;
 import com.blanchisserie.modele.Commande;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -82,6 +83,24 @@ public class EtatCommandeController {
 
     }
 
+    //la fonction qui retourne le statut de la commande
+    private String getEtatCommande(String statut) {
+        // Convertir le statut numérique en texte descriptif
+        switch (statut) {
+            case "0":
+                return "En attente d'attribution";
+            case "1":
+                return "Attribuer";
+            case "2":
+                return "Tâche en cours";
+            case "3":
+                return "Terminer";
+            // Ajoutez d'autres cas pour les autres états de commande si nécessaire
+            default:
+                return "Statut inconnu";
+        }
+    }
+
     @FXML
     void btnNewCommande(MouseEvent event) {
         //root.getScene().getWindow().hide();
@@ -128,7 +147,10 @@ public class EtatCommandeController {
         cellNom.setCellValueFactory(new PropertyValueFactory<Commande, String>("nomClient"));
         cellPrenom.setCellValueFactory(new PropertyValueFactory<Commande, String>("prenomClient"));
         cellDate.setCellValueFactory(new PropertyValueFactory<Commande, String>("dateCommande"));
-        cellStatuts.setCellValueFactory(new PropertyValueFactory<Commande, String>("statutCommande"));
+        //cellStatuts.setCellValueFactory(new PropertyValueFactory<Commande, String>("statutCommande"));
+        cellStatuts.setCellValueFactory(cellData -> new SimpleStringProperty(getEtatCommande(cellData.getValue().getStatutCommande())));
+
+
         tableauCommande.setItems(data);
     }
 

@@ -1,13 +1,12 @@
 package com.blanchisserie.modele;
 
-import java.util.Date;
-
 public class Commande {
     String idCommande;
     String nomClient;
     String prenomClient;
     String dateCommande;
     String statutCommande;
+    String descriptionCommande;
 
     public Commande(String idCommande, String nomClient, String prenomClient, String dateCommande, String statutCommande) {
         this.idCommande = idCommande;
@@ -15,6 +14,24 @@ public class Commande {
         this.prenomClient = prenomClient;
         this.dateCommande = dateCommande;
         this.statutCommande = statutCommande;
+    }
+
+    public Commande(String idCommande, String descriptionCommande, String dateCommande) {
+        this.idCommande = idCommande;
+        this.descriptionCommande = descriptionCommande;
+        this.dateCommande = dateCommande;
+    }
+
+    public String getDescriptionCommande() {
+        return descriptionCommande;
+    }
+
+    public String getDescription() {
+        return descriptionCommande;
+    }
+
+    public void setDescriptionCommande(String descriptionCommande) {
+        this.descriptionCommande = descriptionCommande;
     }
 
     public String getIdCommande() {

@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -17,6 +18,8 @@ public class MenuController implements Initializable {
     private Parent fxml;
     @FXML
     private AnchorPane root;
+    @FXML
+    private Button btnDeconnexion;
 
     @FXML
 
@@ -27,6 +30,21 @@ public class MenuController implements Initializable {
        Stage gestionClient = new Stage();
         try {
             fxml = FXMLLoader.load(getClass().getResource("GestionClients.fxml"));
+            Scene scene = new Scene(fxml);
+            gestionClient.setScene(scene);
+            gestionClient.show();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    //boutton de deconnexion
+    @FXML
+    void btnDeconnexion(MouseEvent event) {
+        root.getScene().getWindow().hide();
+        Stage gestionClient = new Stage();
+        try {
+            fxml = FXMLLoader.load(getClass().getResource("Login.fxml"));
             Scene scene = new Scene(fxml);
             gestionClient.setScene(scene);
             gestionClient.show();

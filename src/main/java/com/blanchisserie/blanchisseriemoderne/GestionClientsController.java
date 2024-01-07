@@ -16,6 +16,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import static com.blanchisserie.blanchisseriemoderne.SendMessage.sendMessage;
+
 
 public class GestionClientsController {
 
@@ -128,11 +130,18 @@ public class GestionClientsController {
                                 txtFieldEmail.clear();
                                 txtFieldLocal.clear();
 
+                                //le message
+                                String message = "Bonjour chere " + nom +" " + prenom + " votre compte a bien été crée chez Blanchisserie Moderne, votre identifiant est le suivant : " + idClient;
+
+                                sendMessage(tel,message);
+
                             } else {
                                 Alert alert = new Alert(Alert.AlertType.INFORMATION,"Echec d'enregistrement du client", ButtonType.OK);
                                 alert.showAndWait();
                             }
                         } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
                     }

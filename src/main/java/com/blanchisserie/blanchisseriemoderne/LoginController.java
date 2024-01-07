@@ -90,16 +90,33 @@ public class LoginController {
             }
         }else {
             //la connexion des employés
-            String sql = "select nomEmploye, motDePasseEmploye from employe";
+            String sql = "select idEmploye, nomEmploye, prenomEmploye, adresseEmploye, telEmploye, dateEmbEmploye, salaireEmploye, motDePasseEmploye, fonctionEmploye from employe";
             try {
                 st = cnx.prepareStatement(sql);
                 result = st.executeQuery();
                 if(result.next()){
                     if(user.equals(result.getString("nomEmploye")) && pass.equals(result.getString("motDePasseEmploye"))){
+
+                        //variable de recuperatin de l'Id de l'employé
+                        String idEmploye = result.getString("idEmploye");
+                        String nomEmploye = result.getString("nomEmploye");
+                        String prenomEmploye = result.getString("prenomEmploye");
+                        String adresseEmploye = result.getString("adresseEmploye");
+                        String telEmploye = result.getString("telEmploye");
+                        //String dateEmbEmploye = result.getString("dateEmbEmploye");
+                        String salaireEmploye = result.getString("salaireEmploye");
+                        String fonctionEmploye = result.getString("fonctionEmploye");
+
                         root.getScene().getWindow().hide();
                         Stage gestionClient = new Stage();
                         try {
-                            fxml = FXMLLoader.load(getClass().getResource("MenuGeneral.fxml"));
+                            fxml = FXMLLoader.load(getClass().getResource("EspaceEmploye.fxml"));
+
+                            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EspaceEmploye.fxml"));
+                            Parent root = fxmlLoader.load();
+                            EspaceEmployeController controller = fxmlLoader.getController();
+                            controller.setIdEmploye(idEmploye, nomEmploye, prenomEmploye, adresseEmploye, telEmploye, salaireEmploye, fonctionEmploye);
+
                             Scene scene = new Scene(fxml);
                             gestionClient.setScene(scene);
                             gestionClient.show();

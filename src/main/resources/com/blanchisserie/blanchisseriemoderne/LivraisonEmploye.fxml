@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blanchisserie.blanchisseriemoderne.LivraisonEmployeController">
+   <children>
+      <AnchorPane layoutX="-3.0" prefHeight="700.0" prefWidth="301.0" style="-fx-background-color: #83ACE7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="899.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="69.0" layoutY="32.0" text="Espace employé" AnchorPane.topAnchor="32.0">
+               <font>
+                  <Font name="Lily Script One" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnTacheExecute" layoutY="143.0" mnemonicParsing="false" onMouseClicked="#btnTacheExecute" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" styleClass="buttonBlanc" stylesheets="@./application.css" text="Tâche à effectuer" textFill="#100cf5" AnchorPane.topAnchor="150.0">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnHistorique" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#btnHistorique" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" styleClass="buttonBlanc" stylesheets="@./application.css" text="Historique des tâches " textFill="#100cf5" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="205.0">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnLivraison" layoutY="260.0" mnemonicParsing="false" onMouseClicked="#btnLivraison" prefHeight="37.0" prefWidth="301.0" style="-fx-opacity: 1;" styleClass="btnActive" stylesheets="@./application.css" text="Livraison effectuer" textFill="#100cf5">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="312.0" layoutY="10.0" prefHeight="700.0" prefWidth="899.0" styleClass="form" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="399.0" layoutY="99.0" styleClass="txtBlanchisserie" stylesheets="@./application.css" text="Mes livraisons" />
+            <TableView fx:id="tableauCommande" layoutX="82.0" layoutY="229.0" prefHeight="441.0" prefWidth="739.0" style="-fx-background-color: #83ACE7;">
+               <columns>
+                  <TableColumn fx:id="cellReference" prefWidth="166.41647338867188" text="Reference" />
+                  <TableColumn fx:id="cellDescription" minWidth="6.0" prefWidth="281.2000732421875" text="Description" />
+                  <TableColumn fx:id="cellDateCommande" prefWidth="131.7999267578125" text="Date de la commande" />
+                  <TableColumn fx:id="cellMarquer" prefWidth="160.19964599609375" text="marquer comme" />
+               </columns>
+            </TableView>
+            <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="311.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../com.blanchisserie.images/icones/expedie.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnRetour" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#btnRetour" prefHeight="32.0" prefWidth="100.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Retour" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

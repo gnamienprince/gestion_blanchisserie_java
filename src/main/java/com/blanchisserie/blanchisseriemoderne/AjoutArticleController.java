@@ -152,4 +152,54 @@ public class AjoutArticleController {
         assert choixRepasser != null : "fx:id=\"choixRepasser\" was not injected: check your FXML file 'AjoutArticle.fxml'.";
 
     }
+
+    public static class espaceEmployeController {
+
+        @FXML
+        private ResourceBundle resources;
+
+        @FXML
+        private URL location;
+
+        @FXML
+        private Button btnTacheExecute;
+
+        @FXML
+        private Button btnHistorique;
+
+        @FXML
+        private Button btnLivraison;
+
+        @FXML
+        private Button btnDeconnexion;
+
+        @FXML
+        void btnDeconnexion(MouseEvent event) {
+
+        }
+
+        @FXML
+        void btnHistorique(MouseEvent event) {
+
+        }
+
+        @FXML
+        void btnLivraison(MouseEvent event) {
+
+        }
+
+        @FXML
+        void btnTacheExecute(MouseEvent event) {
+
+        }
+
+        @FXML
+        void initialize() {
+            assert btnTacheExecute != null : "fx:id=\"btnTacheExecute\" was not injected: check your FXML file 'EspaceEmploye.fxml'.";
+            assert btnHistorique != null : "fx:id=\"btnHistorique\" was not injected: check your FXML file 'EspaceEmploye.fxml'.";
+            assert btnLivraison != null : "fx:id=\"btnLivraison\" was not injected: check your FXML file 'EspaceEmploye.fxml'.";
+            assert btnDeconnexion != null : "fx:id=\"btnDeconnexion\" was not injected: check your FXML file 'EspaceEmploye.fxml'.";
+
+        }
+    }
 }

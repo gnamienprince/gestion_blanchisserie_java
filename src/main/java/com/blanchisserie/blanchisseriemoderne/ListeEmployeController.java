@@ -57,6 +57,8 @@ public class ListeEmployeController {
     @FXML
     private Button btnRetour;
 
+    //donner des id aux éléments (tableau et les céllules)
+
     @FXML
     private TableView<Employe> tableauListe;
 
@@ -123,6 +125,8 @@ public class ListeEmployeController {
         }
     }
 
+
+    // code pour inserer les affichers les données dans le tableau provenant de la BD
     public ObservableList<Employe> data = FXCollections.observableArrayList();
     public void tableauEmploye(){
         String sql = "select * from employe";
@@ -147,7 +151,11 @@ public class ListeEmployeController {
 
     @FXML
     void initialize() {
+
+        //connexion a la BD
         cnx = ConnexionMySQL.ConnexionDB();
+
+        // remplir le tableau a l'initialisation de la fenêtre
         tableauEmploye();
 
         assert root != null : "fx:id=\"root\" was not injected: check your FXML file 'ListeEmploye.fxml'.";

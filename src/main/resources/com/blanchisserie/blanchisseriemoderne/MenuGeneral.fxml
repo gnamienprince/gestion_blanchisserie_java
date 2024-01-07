@@ -11,7 +11,7 @@
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blanchisserie.blanchisseriemoderne.MenuController">
    <children>
       <Label layoutX="183.0" styleClass="txtBlanchisserie" stylesheets="@application.css" text="Menu Général" />
-      <Button layoutX="516.0" layoutY="15.0" mnemonicParsing="false" prefHeight="3.0" prefWidth="70.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Déconnexion" textFill="WHITE">
+      <Button fx:id="btnDeconnexion" layoutX="516.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#btnDeconnexion" prefHeight="3.0" prefWidth="70.0" style="-fx-opacity: 1;" styleClass="buttonBleu" stylesheets="@application.css" text="Déconnexion" textFill="WHITE">
          <font>
             <Font size="9.0" />
          </font></Button>

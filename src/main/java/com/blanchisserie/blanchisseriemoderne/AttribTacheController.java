@@ -6,7 +6,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import com.blanchisserie.blanchisseriemoderne.configuration.ComboBoxDataLoader;
+import com.blanchisserie.modele.Commande;
+import com.blanchisserie.modele.Vetement;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -96,8 +102,10 @@ public class AttribTacheController {
     @FXML
     private Button btnAttribuerTache;
 
+    //id de l'employé
+    String idEmploye;
     @FXML
-    private ListView<?> textFieldRefCommande;
+    private ComboBox<String> textFieldRefCommande;
 
     //fonction de renseignement du nom et prenom de l'employé
     public void initInfo(String nom, String prenom, String fonction) {
@@ -106,14 +114,11 @@ public class AttribTacheController {
         textfileldFonctionEmp.setText(fonction);
     }
 
-    @FXML
-    void btnAttribuerTache(MouseEvent event) {
 
-    }
 
     @FXML
     void btnRechercherEmp(MouseEvent event) {
-        String idEmploye = textfileldRechercheEmp.getText();
+        idEmploye = textfileldRechercheEmp.getText();
         if(idEmploye.isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR,"Veuillez renseigner l'identifiant de l'employé", ButtonType.OK);
             alert.showAndWait();
@@ -153,6 +158,66 @@ public class AttribTacheController {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+
+    //bouton attribution de tâche
+    @FXML
+    void btnAttribuerTache(MouseEvent event) {
+        //attribution de tâche
+        String idCommande = textFieldRefCommande.getValue();
+        String description = TextAreaDescription.getText();
+        //idEmploye
+        int statutTache = 1;
+
+        String sql ="INSERT INTO tacheEmploye (descriptionTache, statutTache, employe, commande) VALUES (?, ?, ?, ?)";
+        try {
+            PreparedStatement st = cnx.prepareStatement(sql);
+            st.setString(1, description);
+            st.setInt(2, statutTache);
+            st.setString(3, idEmploye);
+            st.setString(4, idCommande);
+            int rowsInserted = st.executeUpdate();
+
+            if (rowsInserted > 0) {
+                //le fait de faire passer le statut a 1 pour dire qu'on a bien attribuer cette tâche a un employé
+                String sql2 = "UPDATE commande SET statutCommande = ? WHERE idCommande = ?";
+                try {
+                    PreparedStatement st2 = cnx.prepareStatement(sql2);
+                    int newStatut = 1;
+
+                    // Définir les paramètres dans la requête UPDATE
+                    st2.setInt(1, newStatut);
+                    st2.setString(2, idCommande);
+
+                    // Exécuter la requête UPDATE
+                    int lignesModifiees = st2.executeUpdate();
+
+                    if (lignesModifiees > 0) {
+                        System.out.println("cool");
+                    } else {
+                        System.out.println("nooon");
+                    }
+                }
+                catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+
+
+                //le fait de vider les champs apres avoir enregistrer la commande
+                textFielDateCommande.clear();
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION,"La commande a bien été enregistré avec succès !", ButtonType.OK);
+                alert.showAndWait();
+
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR,"Echec d'enregistrement de la commande", ButtonType.OK);
+                alert.showAndWait();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @FXML
@@ -204,7 +269,10 @@ public class AttribTacheController {
 
     @FXML
     void initialize() {
-                cnx = ConnexionMySQL.ConnexionDB();
+        cnx = ConnexionMySQL.ConnexionDB();
+
+        ComboBoxDataLoader dataLoader = new ComboBoxDataLoader();
+        dataLoader.loadDataToComboBoxCommande(textFieldRefCommande);
         assert root != null : "fx:id=\"root\" was not injected: check your FXML file 'AttribTache.fxml'.";
         assert lblGestionClients != null : "fx:id=\"lblGestionClients\" was not injected: check your FXML file 'AttribTache.fxml'.";
         assert btnNewEmploye != null : "fx:id=\"btnNewEmploye\" was not injected: check your FXML file 'AttribTache.fxml'.";

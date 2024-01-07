@@ -25,6 +25,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import static com.blanchisserie.blanchisseriemoderne.SendMessage.sendMessage;
+
 public class GestionCommandeController {
     Connection cnx;
     private Parent fxml;
@@ -275,6 +277,9 @@ public class GestionCommandeController {
                            listViewIDClient.clear();
                            textfileldTotal.clear();
 
+
+                           //sendMessage();
+
                            //ensuite ici on enregistre les vêtements dans la table vêtement avec le code de la commande
                            //on boucle la dessus pour enregistrer les vêtements
 
@@ -366,8 +371,6 @@ public class GestionCommandeController {
         cnx = ConnexionMySQL.ConnexionDB();
         ComboBoxDataLoader dataLoader = new ComboBoxDataLoader();
         dataLoader.loadDataToComboBox(cmbChoix);
-
-
 
         assert root != null : "fx:id=\"root\" was not injected: check your FXML file 'GestionCommande.fxml'.";
         assert lblGestionClients != null : "fx:id=\"lblGestionClients\" was not injected: check your FXML file 'GestionCommande.fxml'.";

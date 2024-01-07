@@ -12,6 +12,7 @@ module com.blanchisserie.blanchisseriemoderne {
     requires com.almasb.fxgl.all;
     requires mysql.connector.j;
     requires java.sql;
+    requires okhttp3;
 
     opens com.blanchisserie.blanchisseriemoderne to javafx.fxml;
     exports com.blanchisserie.blanchisseriemoderne;
